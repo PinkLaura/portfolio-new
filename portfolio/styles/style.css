@@ -1,0 +1,58 @@
+.dashed-border-l-white {
+    outline-offset: -12px;
+    outline: 1px dashed rgb(255, 255, 255, 0.5);
+}
+
+.dashed-border-m-white {
+    outline-offset: -8px;
+    outline: 1px dashed rgb(255, 255, 255, 0.75);
+}
+
+.dashed-border-m {
+    outline-offset: -8px;
+    outline: 1px dashed rgba(0, 0, 0, 0.25);
+}
+
+a *,
+button *,
+label * {
+    cursor: url('../img/cursor-pointer-x1.svg'), auto !important;
+}
+
+a:hover{
+    cursor: url('../img/cursor-pointer-x1.svg'), auto !important;
+}
+
+body, html, * {
+    cursor: url('../img/cursor-default-x1.svg'), auto !important;
+} 
+
+
+
+
+
+
+.star {
+    position: fixed;
+    pointer-events: none;
+}
+
+.star:before,
+.star:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '\2726';
+    font-size: 12px;
+}
+
+.star:before {
+    color: transparent;
+    text-shadow: 0 0 3px #FF008A10;
+}
+
+.star:after {
+    background: #FF008A50;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
