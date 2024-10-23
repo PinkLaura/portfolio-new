@@ -1,0 +1,781 @@
+<!doctype html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+
+    <script defer src="animations.js"></script>
+
+    <!-- external CSS -->
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body class="text-paragraph overflow-x-hidden">
+    <img src="./img/home/home-decoration-header-gradient-blur-2.svg" class="absolute -right-5 -top-12 blur-[140px]">
+
+
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 md:static w-full bg-background md:bg-transparent z-50">
+        <div class="px-6 md:px-24 py-2 md:py-0 md:mt-10 flex flex-row place-content-between">
+            <a href="#">
+                <img src="./img/pinklaura_logo.svg" class="h-12" alt="PinkLaura Logo" />
+            </a>
+
+            <button onclick="toggleNavbar()" data-collapse-toggle="navbar-multi-level" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm stroke-paragraph rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-multi-level" aria-expanded="false">
+
+                <span class="sr-only">Open main menu</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 5H21" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3 12H21" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3 19H21" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <nav class="fixed md:top-4 md:right-24 top-16 md:w-max w-full p-2 z-50">
+
+        <div id="navbar-multi-level" class="hidden md:block ">
+
+            <ul class="text-lg text-title  
+                            flex items-center bg-white/50 border border-white backdrop-blur-lg text-lg drop-shadow-1 gap-2 text-center text-title stroke-title 
+                            transition-all
+
+                            flex-col rounded-lg p-4
+                            md:flex-row md:rounded-full md:px-4 md:py-1.5 md:space-x-8">
+
+                <li class="!m-0">
+                    <a href="#" class="block py-2 px-3 md:py-1 md:px-2 hover:text-primary_dark hover:drop-shadow-pink"
+                        aria-current="page">
+                        Projects</a>
+                </li>
+
+                <li class="!m-0">
+                    <a href="#" class="block py-2 px-3 md:py-1 md:px-2 hover:text-primary_dark hover:drop-shadow-pink">
+                        Resume</a>
+                </li>
+
+                <li class="!m-0">
+                    <a href="#"
+                        class="inline-block py-2 px-3 md:py-1 md:px-2 hover:text-primary_dark hover:drop-shadow-pink">
+                        About me</a>
+                </li>
+
+                <li class="!m-0">
+                    <a href="#" class="block py-1 px-0.5 hover:stroke-primary_dark hover:drop-shadow-pink">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 8.99976L12 12.4998L17 8.99976" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M2 16.9998V6.99976C2 5.89519 2.89543 4.99976 4 4.99976H20C21.1046 4.99976 22 5.89519 22 6.99976V16.9998C22 18.1044 21.1046 18.9998 20 18.9998H4C2.89543 18.9998 2 18.1044 2 16.9998Z" />
+                        </svg>
+
+                    </a>
+                </li>
+
+                <li class="!m-0">
+                    <a href="#" class="block py-1 px-0.5 hover:stroke-primary_dark hover:drop-shadow-pink">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 8.00024V16.0002C21 18.7616 18.7614 21.0002 16 21.0002H8C5.23858 21.0002 3 18.7616 3 16.0002V8.00024C3 5.23882 5.23858 3.00024 8 3.00024H16C18.7614 3.00024 21 5.23882 21 8.00024Z"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7 17.0002V13.5002V10.0002" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M11 17.0002V13.7502M11 13.7502V10.0002M11 13.7502C11 10.0002 17 10.0002 17 13.7502V17.0002"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7 7.01038L7.01 6.99927" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </li>
+
+                <li class="!m-0">
+                    <a href="#" class="block py-1 px-0.5 hover:stroke-primary_dark hover:drop-shadow-pink">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12Z"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M16.6726 20.8435C15.5 14 12.5 8.00003 8.5 2.62964" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2.06641 10.8406C5.99992 11 15.2828 10.5 19.1414 5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M21.9677 12.81C15.3438 10.8407 7.50002 14.0001 5.23145 19.3613"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </a>
+                </li>
+
+                <li class="!m-0">
+                    <a href="#" class="block py-1 px-0.5 hover:stroke-primary_dark hover:drop-shadow-pink">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 5L2 12.5L9 13.5M21 5L18.5 20L9 13.5M21 5L9 13.5M9 13.5V19L12.2488 15.7229"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+
+                    </a>
+                </li>
+                <!-- Logino -->
+
+                <li class="hidden !m-0 p-1.5 relative transition-all" id="logo-in-navbar">
+                    <a href="#"
+                        class="absolute w-14 h-14 -left-1.5 -top-6 hover:stroke-primary_dark hover:drop-shadow-pink hover:rotate-12">
+                        <img src="./img/pinklaura-logomark.svg" class="w-full">
+
+
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <!-- Sezione header -->
+    <section class="mt-20 md:mt-40">
+
+
+        <!-- container header -->
+        <div class="container max-w-4xl flex flex-col gap-8 px-6 relative mb-16">
+
+            <!-- gradient rosa -->
+            <img src="./img/home/home-decoration-header-gradient-blur.svg"
+                class="absolute -left-72 -bottom-20 blur-[140px] z-10">
+            <!-- icone decorative -->
+            <img src="./img/home/home-decoration-header-only-icons.svg" class="absolute -left-32 -top-20 z-10">
+
+            <!-- scritte -->
+            <h1 class="text-5xl font-serif font-semibold text-title">
+                Design your new adventure with me
+            </h1>
+            <div class="max-w-2xl">
+                <p class="text-2xl">
+                    Hi! I’m <span class="text-primary font-serif font-medium">PinkLaura</span>, a 🎨 <span
+                        class="font-serif ">designer</span> with a 💻 <span class="font-mono">computer science</span>
+                    background, passionate about using logic and empathy in my work.
+                </p>
+                <p class="text-2xl mt-2">
+                    I strive to create lovely designs that solve problems and bring clarity from complexity.
+                </p>
+            </div>
+
+            <!-- pulsanti vari -->
+            <div class="flex gap-2">
+                <button
+                    class="rounded-full py-3 px-6 text-white bg-primary_dark hover:bg-primary drop-shadow-pink hover:drop-shadow-pink_strong"
+                    href="">
+                    Download resume
+                </button>
+                <button
+                    class="rounded-full p-3 bg-white hover:bg-background drop-shadow-pink hover:drop-shadow-pink_strong stroke-paragraph hover:stroke-primary_dark"
+                    href="">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 8.99976L12 12.4998L17 8.99976" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M2 16.9998V6.99976C2 5.89519 2.89543 4.99976 4 4.99976H20C21.1046 4.99976 22 5.89519 22 6.99976V16.9998C22 18.1044 21.1046 18.9998 20 18.9998H4C2.89543 18.9998 2 18.1044 2 16.9998Z" />
+                    </svg>
+
+                </button>
+
+                <button
+                    class="rounded-full p-3 bg-white hover:bg-background drop-shadow-pink hover:drop-shadow-pink_strong stroke-paragraph hover:stroke-primary_dark"
+                    href="">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21 8.00024V16.0002C21 18.7616 18.7614 21.0002 16 21.0002H8C5.23858 21.0002 3 18.7616 3 16.0002V8.00024C3 5.23882 5.23858 3.00024 8 3.00024H16C18.7614 3.00024 21 5.23882 21 8.00024Z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M7 17.0002V13.5002V10.0002" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11 17.0002V13.7502M11 13.7502V10.0002M11 13.7502C11 10.0002 17 10.0002 17 13.7502V17.0002"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M7 7.01038L7.01 6.99927" stroke="#4D4D4D" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- onda di separazione + scritte che si muovono -->
+        <svg viewBox="0 0 1280 180" class="relative w-auto z-20 overflow-hidden font-serif md:text-sm text-lg">
+
+
+            <path style="fill:white" class="blur-[16px]"
+                d="M352 28.8202C198.4 26.3356 53.3333 79.5468 0 106.463V170.77H1280V0L1276.89 0.97566C1203.15 24.1219 1077.53 63.5535 925 79.2017C703 101.977 544 31.9259 352 28.8202Z"
+                fill="white" />
+
+
+            <rect y="116" width="1280" height="64" fill="white" class="absolute -bottom-0" />
+
+
+
+            <path style="fill:transparent" id="curve"
+                d="M0 153.463C100.333 116.547 245.4 73.3356 399 75.8202C591 78.9259 750 148.977 972 126.202C1126.69 110.331 1253.71 69.9977 1327 47" />
+
+            <text x="-25" style="transform:translate3d(0,0,0);">
+                <textPath style="transform:translate3d(0,0,0); fill:rgba(0, 0, 0, 0.75)" alignment-baseline="top"
+                    xlink:href="#curve" startOffset="0px" id="text-path">
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                    Problematize ♡ Think ♡︎ Elaborate ♡︎ Research ♡︎ Ideate ♡︎ Design ♡︎ Explore ♡︎ Iterate ♡︎
+                </textPath>
+            </text>
+        </svg>
+
+
+    </section>
+
+    <!-- sezione How I work -->
+    <section class="bg-white mb-6 z-20 relative">
+
+        <div class="container px-6 max-w-4xl flex flex-col gap-10 relative">
+
+            <!-- gradient rosa -->
+            <img src="./img/home/home-decoration-header-gradient-blur.svg"
+                class="absolute left-56 -bottom-1 blur-[200px] scale-75">
+
+            <h2 class="font-serif text-title text-3xl text-center">How I work</h2>
+            <div class="flex flex-col md:flex-row gap-6 items-stretch">
+
+                <!-- box 1 -->
+                <div
+                    class="bg-white drop-shadow-2 p-6 dashed-border-m text-center rounded-xl flex flex-col items-center w-full">
+                    <img src="./img/home/how-i-work_data-driven.svg" class="mb-2 w-14">
+                    <h3 class="font-serif text-title text-2xl">
+                        Data driven
+                    </h3>
+                    <p class="text-gray-500 text-base">
+                        I believe in informed decision-making: every choice must be backed up by data and strong
+                        reasoning.
+                    </p>
+                </div>
+                <!-- box 2 -->
+                <div
+                    class="bg-white drop-shadow-2 p-6 dashed-border-m text-center rounded-xl flex flex-col items-center w-full">
+                    <img src="./img/home/how-i-work_empathy.svg" class="mb-2 w-14">
+                    <h3 class="font-serif text-title text-2xl">
+                        Empathy
+                    </h3>
+                    <p class="text-gray-500 text-base">
+                        Putting yourself in the user's shoes is fundamental to understanding what’s really going on.
+                    </p>
+                </div>
+
+                <!-- box 3 -->
+                <div
+                    class="bg-white drop-shadow-2 p-6 dashed-border-m text-center rounded-xl flex flex-col items-center w-full">
+                    <img src="./img/home/how-i-work_add-spice.svg" class="mb-2 w-14">
+                    <h3 class="font-serif text-title text-2xl">
+                        Add spice
+                    </h3>
+                    <p class="text-gray-500 text-base">
+                        A little bit of creativity and an eye for aesthetics bring that extra magic to every
+                        project.
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projects -->
+    <section class="bg-white mt-24">
+
+        <div class="container px-6 max-w-4xl flex flex-col gap-4">
+
+            <!-- Title Projects -->
+            <div class="flex flex-row items-center gap-8">
+                <svg width="100%" height="2" viewBox="0 0 411 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1L411 1" stroke="url(#paint0_linear_404_70711)" />
+                    <defs>
+                        <linearGradient id="paint0_linear_404_70711" x1="0" y1="1.5" x2="411" y2="1.5"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="white" />
+                            <stop offset="0.25" />
+                            <stop offset="0.75" stop-color="title" />
+                            <stop offset="1" stop-color="white" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h2 class="font-serif text-title text-3xl text-center w-max">Projects</h2>
+                <svg width="100%" height="2" viewBox="0 0 411 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1L411 1" stroke="url(#paint0_linear_404_70711)" />
+                    <defs>
+                        <linearGradient id="paint0_linear_404_70711" x1="0" y1="1.5" x2="411" y2="1.5"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="white" />
+                            <stop offset="0.25" />
+                            <stop offset="0.75" stop-color="title" />
+                            <stop offset="1" stop-color="white" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <div class="flex flex-col md:gap-16 gap-12 my-6">
+
+                <!-- Progetto Leasy -->
+
+                <div class="relative pb-8 pr-8">
+                    <!-- gradient rosa -->
+                    <img src="./img/home/home-decoration-projects-gradient-blur-leasy.svg"
+                        class="absolute -right-24 -bottom-1 blur-[200px]">
+
+                    <a href="#" class="block drop-shadow-1 rounded-3xl dashed-border-l-white overflow-hidden">
+                        <img src="./img/home/project-cover-leasy.png"
+                            class="hover:scale-110 transition-all hidden md:block">
+                        <img src="./img/home/project-cover-leasy-vertical.png"
+                            class="hover:scale-110 transition-all block md:hidden">
+                    </a>
+
+                    <div
+                        class="col-span-2 bg-gray-100 p-6 rounded-2xl md:w-2/5 w-11/12 absolute bottom-0 right-0 drop-shadow-[0_0_12px_rgba(142,145,241,1)] dashed-border-m">
+
+                        <h3 class="text-indigo-800 font-serif text-2xl font-semibold mb-1">Leasy</h3>
+                        <p class="text-paragraph">Construction of a property management platform, from ideation to
+                            UI</p>
+                        <div class="flex-row align-right">
+                            <a href="#"
+                                class="text-gray-400 stroke-gray-400 text-xs flex items-center justify-end hover:text-indigo-800 hover:stroke-indigo-800">
+                                See project
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.75 4.5L11.25 9L6.75 13.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 md:gap-16">
+                    <div class="flex flex-col gap-12 relative">
+
+                        <!-- gradient giallo  -->
+                        <img src="./img/home/home-decoration-projects-gradient-blur-paypal.svg"
+                            class="absolute -left-24 top-24 blur-[200px]">
+
+
+                        <!-- Progetto Paypal -->
+
+                        <div class="relative pb-8 pr-8">
+                            <a href="#" class="block drop-shadow-1 rounded-3xl dashed-border-l-white overflow-hidden">
+                                <img src="./img/home/project-cover-paypal.png" class="hover:scale-110 transition-all">
+                            </a>
+
+                            <div
+                                class="col-span-2 bg-gray-100 p-6 rounded-2xl md:w-3/4 w-11/12  absolute bottom-0 right-0 drop-shadow-[0_0_12px_rgba(208,183,103,1)] dashed-border-m">
+
+                                <h3 class="text-yellow-700 font-serif text-2xl font-semibold mb-1">PayPal</h3>
+                                <p class="text-paragraph">UX analysis of strengh and weakness of the Paypal app</p>
+                                <div class="flex-row align-right">
+                                    <a href="#"
+                                        class="text-gray-400 stroke-gray-400 text-xs flex items-center justify-end hover:text-yellow-700 hover:stroke-yellow-700">
+                                        See project
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.75 4.5L11.25 9L6.75 13.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Progetto Skyscanner -->
+
+                        <div class="relative pb-8 pr-8">
+                            <a href="#" class="block drop-shadow-1 rounded-3xl dashed-border-l-white overflow-hidden">
+                                <img src="./img/home/project-cover-skyscanner.png"
+                                    class="hover:scale-110 transition-all">
+                            </a>
+
+                            <div
+                                class="col-span-2 bg-gray-100 p-6 rounded-2xl md:w-3/4 w-11/12  absolute bottom-0 right-0 drop-shadow-[0_0_12px_rgba(96,156,236,1)] dashed-border-m">
+
+                                <h3 class="text-sky-800 font-serif text-2xl font-semibold mb-1">Skyscanner</h3>
+                                <p class="text-paragraph">UX analysis and redesign of some screens of the flights search
+                                    function.</p>
+                                <div class="flex-row align-right">
+                                    <a href="#"
+                                        class="text-gray-400 stroke-gray-400 text-xs flex items-center justify-end hover:text-sky-800 hover:stroke-sky-800">
+                                        See project
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.75 4.5L11.25 9L6.75 13.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="flex flex-col gap-12 relative">
+
+                        <!-- gradient rosa -->
+                        <img src="./img/home/home-decoration-projects-gradient-blur-archive.svg"
+                            class="absolute -right-48 -bottom-10 blur-[200px] z-10">
+
+                        <!-- Progetto Retake -->
+
+                        <div class="relative pb-8 pr-8">
+                            <a href="#" class="block drop-shadow-1 rounded-3xl dashed-border-l-white overflow-hidden">
+                                <img src="./img/home/project-cover-retake.png" class="hover:scale-110 transition-all">
+                            </a>
+
+                            <div
+                                class="col-span-2 bg-gray-100 p-6 rounded-2xl md:w-3/4 w-11/12 absolute bottom-0 right-0 drop-shadow-[0_0_12px_rgba(232,193,125,1)] dashed-border-m">
+
+                                <h3 class="text-amber-700 font-serif text-2xl font-semibold mb-1">Retake</h3>
+                                <p class="text-paragraph">UX and UI for an AI photo generator app</p>
+                                <div class="flex-row align-right">
+                                    <a href="#"
+                                        class="text-gray-400 stroke-gray-400 text-xs flex items-center justify-end hover:text-amber-700 hover:stroke-amber-700">
+                                        See project
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.75 4.5L11.25 9L6.75 13.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- Progetto Archive -->
+
+                        <div class="relative pb-8 pr-8">
+                            <a href="#" class="block drop-shadow-1 rounded-3xl dashed-border-l-white overflow-hidden">
+                                <img src="./img/home/project-cover-archive.png" class="hover:scale-110 transition-all">
+                            </a>
+
+                            <div
+                                class="col-span-2 bg-gray-100 p-6 rounded-2xl md:w-3/4 w-11/12 absolute bottom-0 right-0 drop-shadow-[0_0_12px_rgba(229,105,146,1)] dashed-border-m">
+
+                                <h3 class="text-pink-700 font-serif text-2xl font-semibold mb-1">Archive</h3>
+                                <p class="text-paragraph">A list of all my projects and drafts, since university.</p>
+                                <div class="flex-row align-right">
+                                    <a href="#"
+                                        class="text-gray-400 stroke-gray-400 text-xs flex items-center justify-end hover:text-pink-700 hover:stroke-pink-700">
+                                        See project
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.75 4.5L11.25 9L6.75 13.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ondina di apertura -->
+    <svg width="100%" viewBox="0 0 1280 82" xmlns="http://www.w3.org/2000/svg" class="relative z-20">
+        <path class="fill-pink-50"
+            d="M335.75 20.2446C189.241 19.1404 50.8712 42.7898 0 54.7525V82H1281V0C1251.43 0 1094.05 32.5141 882.297 42.6364C670.546 52.7587 518.886 21.6249 335.75 20.2446Z"
+            fill="bg-pink-50" />
+    </svg>
+
+
+    <!-- Section About me -->
+    <section class="bg-gradient-to-b from-pink-50 from-25% to-white relative z-40">
+
+        <div class="container p-6 max-w-4xl flex flex-col gap-8 ">
+            <h2 class="text-primary_dark text-3xl font-serif font-medium">About me</h2>
+
+            <!-- 3 badges -->
+            <div class="flex md:flex-row flex-col gap-8 md:items-center text-title text-lg">
+                <div class="flex flex-row gap-1 items-center">
+                    <svg class="-rotate-[10deg]  hover:rotate-[20deg] transition-all" width="53" height="53"
+                        viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_641_112963)">
+                            <rect x="8.85205" y="8.85221" width="36" height="36" rx="8" fill="white"
+                                shape-rendering="crispEdges" />
+                            <path
+                                d="M19.3521 30.1855V23.5189C19.3521 21.2177 21.2175 19.3522 23.5187 19.3522H30.1854C32.4866 19.3522 34.3521 21.2177 34.3521 23.5189V30.1855C34.3521 32.4867 32.4866 34.3522 30.1854 34.3522H23.5187C21.2175 34.3522 19.3521 32.4867 19.3521 30.1855Z"
+                                stroke="#FF008A" stroke-width="0.833333" stroke-linecap="round" />
+                            <path
+                                d="M30.6021 28.9355C30.6021 28.9355 29.3521 30.6022 26.8521 30.6022C24.3521 30.6022 23.1021 28.9355 23.1021 28.9355"
+                                stroke="#FF008A" stroke-width="0.833333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M23.9357 25.1855C23.7056 25.1855 23.519 24.999 23.519 24.7689C23.519 24.5388 23.7056 24.3522 23.9357 24.3522C24.1658 24.3522 24.3524 24.5388 24.3524 24.7689C24.3524 24.999 24.1658 25.1855 23.9357 25.1855Z"
+                                fill="#FF008A" stroke="#FF008A" stroke-width="0.833333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M29.7687 25.1855C29.5386 25.1855 29.3521 24.999 29.3521 24.7689C29.3521 24.5388 29.5386 24.3522 29.7687 24.3522C29.9988 24.3522 30.1854 24.5388 30.1854 24.7689C30.1854 24.999 29.9988 25.1855 29.7687 25.1855Z"
+                                fill="#FF008A" stroke="#FF008A" stroke-width="0.833333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_641_112963" x="0.852051" y="0.852207" width="52" height="52"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset />
+                                <feGaussianBlur stdDeviation="4" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                    result="effect1_dropShadow_641_112963" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_641_112963"
+                                    result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    Laura Nesossi
+                </div>
+
+
+                <div class="flex flex-row gap-1 items-center">
+                    <svg class="rotate-[5deg] hover:-rotate-[20deg] transition-all" width="53" height="53"
+                        viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_641_112969)">
+                            <rect x="8.20508" y="8.50031" width="36" height="36" rx="8" fill="white"
+                                shape-rendering="crispEdges" />
+                            <path
+                                d="M32.8714 24.8335C32.8714 28.5155 26.2048 34.8335 26.2048 34.8335C26.2048 34.8335 19.5381 28.5155 19.5381 24.8335C19.5381 21.1516 22.5229 18.1669 26.2048 18.1669C29.8867 18.1669 32.8714 21.1516 32.8714 24.8335Z"
+                                stroke="#38BDF8" stroke-width="0.833333" stroke-linecap="round" />
+                            <path
+                                d="M26.2054 25.667C26.6657 25.667 27.0387 25.2939 27.0387 24.8336C27.0387 24.3734 26.6657 24.0003 26.2054 24.0003C25.7452 24.0003 25.3721 24.3734 25.3721 24.8336C25.3721 25.2939 25.7452 25.667 26.2054 25.667Z"
+                                fill="#38BDF8" stroke="#38BDF8" stroke-width="0.833333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_641_112969" x="0.205078" y="0.500309" width="52" height="52"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset />
+                                <feGaussianBlur stdDeviation="4" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                    result="effect1_dropShadow_641_112969" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_641_112969"
+                                    result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    Milan, Italy
+                </div>
+
+                <div class="flex flex-row gap-1 items-center">
+                    <svg class="-rotate-[5deg] hover:rotate-[20deg] transition-all" width="53" height="53"
+                        viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_641_112973)">
+                            <rect x="8.20557" y="8.50031" width="36" height="36" rx="8" fill="white"
+                                shape-rendering="crispEdges" />
+                            <path
+                                d="M19.5386 30.2503V33.167C19.5386 34.0875 20.2848 34.8336 21.2052 34.8336H31.2052C32.1257 34.8336 32.8719 34.0875 32.8719 33.167V30.2503"
+                                stroke="#EAB308" stroke-width="0.833333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M18.7056 28.1669V27.3335C18.7056 26.413 19.4518 25.6669 20.3722 25.6669H32.0389C32.9594 25.6669 33.7056 26.413 33.7056 27.3335V28.1669"
+                                stroke="#EAB308" stroke-width="0.833333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M26.2056 23.1669V25.6669" stroke="#EAB308" stroke-width="0.833333"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M26.2052 23.1669C27.2572 23.1669 27.8719 22.3601 27.8719 20.9794C27.8719 19.5987 26.2052 18.1669 26.2052 18.1669C26.2052 18.1669 24.5386 19.5987 24.5386 20.9794C24.5386 22.3601 25.1532 23.1669 26.2052 23.1669Z"
+                                stroke="#EAB308" stroke-width="0.833333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M23.7056 28.1669C23.7056 29.5476 22.5863 30.6669 21.2056 30.6669C19.8249 30.6669 18.7056 29.5476 18.7056 28.1669"
+                                stroke="#EAB308" stroke-width="0.833333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M28.7056 28.1669C28.7056 29.5476 27.5863 30.6669 26.2056 30.6669C24.8248 30.6669 23.7056 29.5476 23.7056 28.1669"
+                                stroke="#EAB308" stroke-width="0.833333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M33.7056 28.1669C33.7056 29.5476 32.5863 30.6669 31.2056 30.6669C29.8248 30.6669 28.7056 29.5476 28.7056 28.1669"
+                                stroke="#EAB308" stroke-width="0.833333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_641_112973" x="0.205566" y="0.500309" width="52" height="52"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset />
+                                <feGaussianBlur stdDeviation="4" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                    result="effect1_dropShadow_641_112973" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_641_112973"
+                                    result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    20/12/1997
+                </div>
+            </div>
+
+            <!-- White container -->
+            <div
+                class="flex md:flex-row flex-col-reverse gap-6 p-6 mr-8 text-paragraph bg-white rounded-3xl drop-shadow-2 md:mr-12 mt-44 md:mt-0">
+                <div>
+                    <p class="mb-2">
+                        During my bachelor's degree in computer science, I realized that my <b>empathy and ability to
+                            connect with others</b> weren't being fully utilized.
+                    </p>
+                    <p class="mb-2">
+                        This sparked a growing interest in the psychology of communication and <b>user experience</b>,
+                        which
+                        led me to pursue a master's degree focused on these areas.
+                    </p>
+                    <p class="mb-2">
+                        Over the past three years, I’ve deepened my understanding of user psychology and research
+                        processes, while also improving my design skills across different company environments.
+                    </p>
+                    <p>
+                        Now, <b>I’m excited to take on new challenges</b> and push myself with innovative projects.
+                    </p>
+                </div>
+
+                <!-- Empty container for photo -->
+
+                <div class="relative">
+                    <div class="block md:w-[152px] md:h-full h-[144px] w-full"></div>
+                </div>
+
+                <!-- Absolute Photo -->
+                <img src="./img/home/photo-laura.png"
+                    class="drop-shadow-1 rounded-3xl dashed-border-m-white absolute bottom-8 md:-right-12 w-[216px] hover:scale-x-[-1] transition-all duration-700">
+            </div>
+
+        </div>
+
+
+        <!-- Container recensioni-->
+        <div class="container p-6 max-w-4xl flex flex-col gap-8 ">
+
+            <h3 class="text-2xl text-title font-serif font-semibold">Someone said that... </h3>
+            <div class="flex flex-column md:flex-row gap-6">
+
+                <!-- Recensione 1 -->
+                <div class="bg-white drop-shadow-1 p-6 dashed-border-m rounded-xl flex flex-col w-full gap-1">
+                    <h4 class="font-serif text-title text-sm">
+                        Nome qualcuno
+                    </h4>
+                    <h4 class="font-serif text-primary_dark text-base font-medium">
+                        Nome qualcuno
+                    </h4>
+                    <p class="text-gray-400 text-sm">
+                        Laura has always been beyond expectations.
+                        She knows what leads to a good product and does her research properly before diving into design.
+                        Her method clears up many questions from reviewers' minds and gives trust in her work.
+                    </p>
+                    <a href="#" class="mt-1 text-primary_dark/50 text-sm hover:text-primary">
+                        See more
+                    </a>
+                </div>
+
+                <!-- Recensione 2 -->
+                <div class="bg-white drop-shadow-1 p-6 dashed-border-m rounded-xl flex flex-col w-full gap-1">
+                    <h4 class="font-serif text-title text-sm">
+                        Nome qualcuno
+                    </h4>
+                    <h4 class="font-serif text-primary_dark text-base font-medium">
+                        Nome qualcuno
+                    </h4>
+                    <p class="text-gray-400 text-sm">
+                        Laura has always been beyond expectations.
+                        She knows what leads to a good product and does her research properly before diving into design.
+                        Her method clears up many questions from reviewers' minds and gives trust in her work.
+                    </p>
+                    <a href="#" class="mt-1 text-primary_dark/50 text-sm hover:text-primary">
+                        See more
+                    </a>
+                </div>
+
+                <!-- Recensione 3 -->
+                <div class="bg-white drop-shadow-1 p-6 dashed-border-m rounded-xl flex flex-col w-full gap-1">
+                    <h4 class="font-serif text-title text-sm">
+                        Nome qualcuno
+                    </h4>
+                    <h4 class="font-serif text-primary_dark text-base font-medium">
+                        Nome qualcuno
+                    </h4>
+                    <p class="text-gray-400 text-sm">
+                        Laura has always been beyond expectations.
+                        She knows what leads to a good product and does her research properly before diving into design.
+                        Her method clears up many questions from reviewers' minds and gives trust in her work.
+                    </p>
+                    <a href="#" class="mt-1 text-primary_dark/50 text-sm hover:text-primary">
+                        See more
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ondina di chiusura -->
+
+    <svg width="100%" viewBox="0 0 1280 83" xmlns="http://www.w3.org/2000/svg"
+        class="relative -top-[1px] z-50 fill-white">
+        <path
+            d="M945.25 62.4597C1091.76 63.564 1230.13 39.9146 1281 27.9518V0.704346H0V82.7043C29.5688 82.7043 186.952 50.1902 398.703 40.0679C610.454 29.9456 762.114 61.0794 945.25 62.4597Z" />
+    </svg>
+
+
+
+
+    <section class="bg-white relative z-20">
+        <!-- gradient rosa -->
+        <img src="./img/home/home-decoration-header-gradient-blur.svg"
+            class="absolute left-72 -top-60  blur-[180px] z-10">
+        <!-- gradient rosa -->
+        <img src="./img/home/home-decoration-header-gradient-blur.svg"
+            class="absolute -right-32 -top-40 scale-50 blur-[140px] z-10">
+
+    </section> 
+
+</body>
+
+</html>
